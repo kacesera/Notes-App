@@ -12,4 +12,8 @@ class NotesList {
   showNote(number) {
     return this.#notes[number].showMessage();
   }
+
+  getAllNotes() {
+    return this.#notes;
+  }
 }
