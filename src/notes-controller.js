@@ -22,6 +22,13 @@ class NotesController {
 
 };
 
+function ensureSubmitDoesNotRefreshPage() {
+  document.getElementById('text').addEventListener('submit', function(event){
+    event.preventDefault();
+    console.log(event);
+  });
+};
+
 function makeUrlChangeShowNoteForCurrentPage() {
   window.addEventListener("hashchange", showNoteForCurrentPage);
 };
@@ -36,5 +43,6 @@ function getNoteFromUrl(location) {
 
 controller = new NotesController(new NotesList);
 controller.insertListHTML();
+ensureSubmitDoesNotRefreshPage();
 makeUrlChangeShowNoteForCurrentPage();
 

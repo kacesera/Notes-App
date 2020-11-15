@@ -3,9 +3,9 @@ console.log("-------------");
 // Line2 initializes ability to test.
 var test = new Asparagus();
 var message = "The best note! I've never written a better note in my life!"
-var note = new Note(message);
-var note2 = new Note(message);
-var note3 = new Note(message);
+var note = new Note(message, 0);
+var note2 = new Note(message, 1);
+var note3 = new Note(message, 2);
 
 // No {} for function otherwise no return ability
 // Testing that our tests work.

@@ -1,11 +1,10 @@
-var uniqueID = -1
 class Note {
   #message;
   #noteID;
 
   constructor(message, id) {
     this.#message = message
-    this.#noteID = this._getUniqueNum();
+    this.#noteID = id
   }
 
   showID() {
@@ -21,10 +20,4 @@ class Note {
   _shortenMessage() {
     return this.#message.substr(0, 20);
   }
-
-  _getUniqueNum() {
-    uniqueID += 1
-    return uniqueID - 1
-  }
-
 }
