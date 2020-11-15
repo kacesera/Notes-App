@@ -1,6 +1,13 @@
-function sayHowdy() {
-  element = document.getElementById('app');
-  element.innerHTML = "Howdy Partner";
-}
+class NotesController {
+  #view
 
-sayHowdy();
+  constructor(noteListModel, listViewClass = NotesListView) {
+    noteListModel.createNote('Favourite drink: seltzer');
+    this.#view = new listViewClass(noteListModel);
+  }
+
+  insertListHTML(page = document) {
+    page.getElementById('app').innerHTML = this.#view.renderListHTML();
+  }
+};
+
