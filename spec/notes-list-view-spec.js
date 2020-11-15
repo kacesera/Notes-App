@@ -1,9 +1,11 @@
+console.log("NOTES LIST VIEW TESTS");
+console.log("-------------");
 var test = new Asparagus();
 var note1 = {
-  showMessage: () => { return 'First note.'; }
+  showTwentyChars: () => { return 'First note.'; }
 }
 var note2 = {
-  showMessage: () => { return 'Second note.'; }
+  showTwentyChars: () => { return 'Second note.'; }
 }
 var notesListModel = {
   getAllNotes: () => { return [note1, note2]; }
@@ -29,3 +31,5 @@ test.it("notesListView.renderListHTML() creates an html list with both notes", (
 test.it("creates an empty list if there are no notes", () => (
   test.expect(noNotesListView.renderListHTML()).toEqual(emptyListHTML)
 ));
+
+console.log("-------------");

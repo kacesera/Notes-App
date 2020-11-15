@@ -1,3 +1,5 @@
+console.log("NOTES CONTROLLER TESTS");
+console.log("-------------");
 var test = new Asparagus();
 var html = "<ul><li><div>Favourite drink: seltzer</div></li></ul>"
 var indexHTML = {
@@ -26,3 +28,5 @@ noteController.insertListHTML(page);
 test.it("adds list HTML to the index page", () => (
   test.expect(indexHTML.innerHTML).toEqual(html)
 ));
+
+console.log("-------------");

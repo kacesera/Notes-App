@@ -1,3 +1,5 @@
+console.log("NOTES LIST MODEL TESTS");
+console.log("-------------");
 var test = new Asparagus();
 var notesList = new NotesList();
 
@@ -19,3 +21,5 @@ test.it("getAll returns an array of length 2", () => (
 test.it("getAll returns an array which contains our second note", () => (
   test.expect(notesList.getAllNotes()[1].showMessage()).toEqual("Second note")
 ));
+
+console.log("-------------");
