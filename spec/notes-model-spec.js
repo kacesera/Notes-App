@@ -4,6 +4,8 @@ console.log("-------------");
 var test = new Asparagus();
 var message = "The best note! I've never written a better note in my life!"
 var note = new Note(message);
+var note2 = new Note(message);
+var note3 = new Note(message);
 
 // No {} for function otherwise no return ability
 // Testing that our tests work.
@@ -22,6 +24,19 @@ test.it('can return the message stored', () =>
 // Testing #showTwentyChars();
 test.it("returns only the first 20 characters of a note", () => (
   test.expect(note.showTwentyChars()).toEqual("The best note! I've ")
+));
+
+// Testing that each note can have a unique 'id'
+
+test.it("has an id of 0",  () =>(
+  test.expect(note.showID()).toEqual(0)
+));
+
+test.it("has an id of 1",  () =>(
+  test.expect(note2.showID()).toEqual(1)
+));
+test.it("has an id of 2",  () =>(
+  test.expect(note3.showID()).toEqual(2)
 ));
 
 console.log("-------------");

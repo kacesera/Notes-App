@@ -1,12 +1,17 @@
 console.log("NOTES CONTROLLER TESTS");
 console.log("-------------");
 var test = new Asparagus();
-var html = "<ul><li><div>Favourite drink: seltzer</div></li></ul>"
+var shortHTML = "<ul><li><div>Favourite drink: sel</div></li></ul>"
 var indexHTML = {
   innerHTML: "<div id='app'>Hello Planet</div>"
 }
+var noteDouble = {
+  showMessage: () => { return "Favourite drink: seltzer" },
+  showID: () => { return 0 }
+}
 var listDouble = {
-  createNote: () => {}
+  createNote: () => { return noteDouble },
+  showNote: () => { return noteDouble.showMessage() }
 }
 class Page {
   getElementById(element) { 
@@ -16,17 +21,24 @@ class Page {
 class viewDouble {
   constructor(listDouble){
   }
+  getList () {
+    return listDouble;
+  }
   renderListHTML() {
-    return html;
+    return shortHTML;
   }
 }
 var page = new Page();
 var noteController = new NotesController(listDouble, viewDouble);
 
 noteController.insertListHTML(page);
-
 test.it("adds list HTML to the index page", () => (
-  test.expect(indexHTML.innerHTML).toEqual(html)
+  test.expect(indexHTML.innerHTML).toEqual(shortHTML)
+));
+
+noteController.showNote('0', page);
+test.it("shows a full note on the same page", () => (
+  test.expect(indexHTML.innerHTML).toEqual("Favourite drink: seltzer")
 ));
 
 console.log("-------------");

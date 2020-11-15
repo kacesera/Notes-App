@@ -2,9 +2,11 @@ console.log("NOTES LIST VIEW TESTS");
 console.log("-------------");
 var test = new Asparagus();
 var note1 = {
+  showID: () => { return 0; },
   showTwentyChars: () => { return 'First note.'; }
 }
 var note2 = {
+  showID: () => { return 1; },
   showTwentyChars: () => { return 'Second note.'; }
 }
 var notesListModel = {
@@ -13,7 +15,7 @@ var notesListModel = {
 var noNotesListModel = {
   getAllNotes: () => { return []; }
 }
-var listHTML = "<ul><li><div>First note.</div></li><li><div>Second note.</div></li></ul>"
+var listHTML = "<ul><a href='#note0'><li><div>First note.</div></li></a><a href='#note1'><li><div>Second note.</div></li></a></ul>"
 var emptyListHTML = "<ul></ul>"
 var notesListView = new NotesListView(notesListModel);
 var noNotesListView = new NotesListView(noNotesListModel);

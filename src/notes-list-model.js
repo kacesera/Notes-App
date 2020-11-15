@@ -1,7 +1,9 @@
 class NotesList {
   #notes;
+  #uniqueID;
 
   constructor() {
+    this.#uniqueID = -1
     this.#notes = []
   }
 

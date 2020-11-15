@@ -12,7 +12,7 @@ class NotesListView {
   renderListHTML() {
     var output = '<ul>';
     this.#notesListModel.getAllNotes().forEach(
-      note => output += `<li><div>${note.showTwentyChars()}</div></li>`
+      note => output += `<a href='#note${note.showID()}'><li><div>${note.showTwentyChars()}</div></li></a>`
     );
     return output += '</ul>';
   }
