@@ -11,3 +11,6 @@ class NotesController {
   }
 };
 
+controller = new NotesController(new NotesList);
+controller.insertListHTML();
+
